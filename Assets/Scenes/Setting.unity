@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clip_BGM: {fileID: 8300000, guid: 270bf5d6d43d2f54c97f242b2cf675e3, type: 3}
   loopStart_BGM: 0
-  loopEnd_BGM: 20
+  loopEnd_BGM: 70
   demoText: {fileID: 742396967}
 --- !u!4 &260599778
 Transform:

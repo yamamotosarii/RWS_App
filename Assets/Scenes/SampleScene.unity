@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 140755801}
   - component: {fileID: 140755800}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Start_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,6 +255,85 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140755798}
+  m_CullTransparentMesh: 1
+--- !u!1 &388005924
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388005925}
+  - component: {fileID: 388005927}
+  - component: {fileID: 388005926}
+  m_Layer: 5
+  m_Name: Measurement_Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &388005925
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388005924}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1875712675}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 108}
+  m_SizeDelta: {x: 400, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &388005926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388005924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 3
+    m_MaxSize: 63
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &388005927
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388005924}
   m_CullTransparentMesh: 1
 --- !u!1 &583890493
 GameObject:
@@ -668,7 +747,7 @@ AudioSource:
   m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: a6c456313f510c742b75dad95b5270ba, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 039682872850ed14d9ec80bfcca03c7e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 270bf5d6d43d2f54c97f242b2cf675e3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.255
   m_Pitch: 1
@@ -786,7 +865,8 @@ MonoBehaviour:
   ac_y: 0
   ac_z: 0
   Ac: {fileID: 1348819358}
-  audioClip1: {fileID: 8300000, guid: 5a517f85900ef3246b2898306e90cca2, type: 3}
+  Measurement: {fileID: 388005926}
+  audioClip1: {fileID: 8300000, guid: 270bf5d6d43d2f54c97f242b2cf675e3, type: 3}
   startingPitch: 1
   changedPitch: 0
 --- !u!1 &1348819356
@@ -801,7 +881,7 @@ GameObject:
   - component: {fileID: 1348819359}
   - component: {fileID: 1348819358}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Diplay_Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -859,7 +939,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: 
 --- !u!222 &1348819359
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1120,6 +1200,7 @@ RectTransform:
   - {fileID: 140755799}
   - {fileID: 1348819357}
   - {fileID: 583890494}
+  - {fileID: 388005925}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

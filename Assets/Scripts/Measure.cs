@@ -18,6 +18,7 @@ public class Measure : MonoBehaviour
     public float ac_y;
     public float ac_z;
     public Text Ac = null;
+    public Text Measurement = null;
     public AudioClip audioClip1;
     private AudioSource audioSource;
     public int startingPitch = 1;
@@ -47,22 +48,19 @@ public class Measure : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(first_data == true)
-        {
-            ac_y = Input.acceleration.x;
-            ac_y = Input.acceleration.x;
-            ac_y = Input.acceleration.x;
-            acceleration += Mathf.Sqrt(Mathf.Pow(ac_x, 2) + Mathf.Pow(ac_y, 2) + Mathf.Pow(ac_z, 2));
-            max_acc = acceleration;
-            min_acc = acceleration;
-            first_data = false;
-        }
         if(flag == true){
+            Measurement.text = "Measurement";
             currentTime += Time.deltaTime;
             ac_y = Input.acceleration.x;
             ac_y = Input.acceleration.x;
             ac_y = Input.acceleration.x;
             acceleration = Mathf.Sqrt(Mathf.Pow(ac_x, 2) + Mathf.Pow(ac_y, 2) + Mathf.Pow(ac_z, 2));
+            if(first_data == true)
+            {
+                max_acc = acceleration;
+                min_acc = acceleration;
+                first_data = false;
+            }
             if(acceleration > max_acc)
             {
                 max_acc = acceleration;
@@ -81,21 +79,23 @@ public class Measure : MonoBehaviour
                     Ac.text =  "Acceleration:" + acc_data.ToString();
                     if(acc_data < 1.5f)
                     {
-                        changedPitch = 0.5f;
+                        changedPitch = 0.8909f;
                     }
-                    else if(acceleration >= 1.5f || acceleration <= 3.0f)
+                    else if(acc_data >= 1.5f && acc_data <= 3.0f)
                     {
                         changedPitch = 1.0f;
                     }
-                    else
+                    else if(acc_data > 3.0f)
                     {
-                        changedPitch = 1.5f;
+                        changedPitch = 1.12246f;
                     }
                     audioSource.pitch = changedPitch;
                     total_time = 0f;
                     acceleration = 0f;
                 }
             }
+        }else{
+            Measurement.text = " ";
         }
 
     }

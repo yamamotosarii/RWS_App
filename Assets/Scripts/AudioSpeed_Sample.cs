@@ -78,7 +78,7 @@ public class AudioSpeed_Sample : MonoBehaviour
         }
     }
 
-    bool CheckResentBar(float _t =10f)
+    bool CheckResentBar(float _t = 35f)
     {
         //BGMが一回ループする間に何回転調可能時間を付けるか？
         //（例）20小節の曲で、2小節に一回転調できるように設定する場合　_t = 20 / 2
@@ -99,11 +99,11 @@ public class AudioSpeed_Sample : MonoBehaviour
     {
         if (nowPitch != aimPitch)
         {
-            demoText.text = "転調待機中…\n" + (nowPitch - 4) + " → " + (aimPitch - 4);
+            demoText.text = "Processing…\n" + (nowPitch - 4) + " → " + (aimPitch - 4);
         }
         else
         {
-            demoText.text = "再生中\nPitch:" + (nowPitch - 4);
+            demoText.text = "Playing\nPitch:" + (nowPitch - 4);
         }
     }
     public void PitchChange(int i)
