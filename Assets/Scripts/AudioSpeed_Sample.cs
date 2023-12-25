@@ -30,20 +30,20 @@ public class AudioSpeed_Sample : MonoBehaviour
     }
     public void onClickMinus()
     {
-        if(aimPitch > 0)
+        if (aimPitch > 0)
         {
-        aimPitch--;
+            aimPitch--;
         }
     }
     public void onClickChangeMode()
     {
-         SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("SampleScene");
     }
     public void onClickPlus()
     {
-        if(aimPitch < 12)
+        if (aimPitch < 12)
         {
-        aimPitch++;
+            aimPitch++;
         }
     }
     // Update is called once per frame
@@ -112,4 +112,3 @@ public class AudioSpeed_Sample : MonoBehaviour
         aimPitch = Mathf.Clamp(aimPitch, 0, 16);
     }
 }
-
